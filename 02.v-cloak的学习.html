@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!--将来new vue的实例会控制这个元素中的所有内容-->
+    <div id="app">
+        <p v-cloak>{{msg}}</p>
+        <h4 v-text="msg"></h4>
+        <div>{{msg1}}</div>
+        <div v-html="msg1"></div>
+    </div>
+
+
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+    <script>
+        //创建一个vue的实例
+        //当我们导入包之后，再浏览器的内存中，就多了一个vue构造函数
+        var vm = new Vue({
+            el: '#app', //表示，当前我们new的这个Vue实例,要控制页面上的哪个区域
+            data:{
+                'msg': 'sfsdfsdfasfaf',
+                'msg1': '<h1>你好，我是H1,大大大大</h1>'
+            }
+        })
+
+    </script>
+
+</body>
+</html>
