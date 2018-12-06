@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <h1 :style="[styleObj1, styleObj2]">这是一个H1</h1>
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                styleObj1:{color:'red', 'font-weight':200},
+                styleObj2:{'font-style': 'italic'}
+            }
+        })
+
+    </script>
+
+</body>
+</html>
