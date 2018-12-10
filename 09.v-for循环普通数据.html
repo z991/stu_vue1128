@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <!--<p>{{list[0]}}</p>-->
+        <!--<p v-for="item in list">-->
+            <!--{{item}}-->
+        <!--</p>-->
+        <p v-for="(item, i) in list">
+            索引值为{{i}}, 值为{{item}}
+        </p>
+
+    </div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            list: [1,2,3,4,5,6]
+        },
+        methods: {},
+    })
+    </script>
