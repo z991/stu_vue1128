@@ -40,7 +40,8 @@
                 },
                 stop(){//停止定时器
                     clearInterval(this.intervalId)
-
+                    //每当清楚了定时器之后,需要重新把intervalId置为null
+                    this.intervalId = null;
                 }
             }
         })
