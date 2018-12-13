@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <!--<p>{{msg | msgFormat}}</p>-->
+        <p>{{msg | msgFormat('疯狂', '6666') | test}}</p>
+
+    </div>
+<script>
+    // Vue.filter('msgFormat', function (msg) {
+    //     return msg.replace(/了/g, '邪恶')
+    // })
+    // 定义一个Vue全局的过滤器，名字叫做msgFormat
+    Vue.filter('msgFormat', function (msg, arg, arg2) {
+        return msg.replace(/了/g, arg + arg2)
+    })
+
+    Vue.filter('test', function (msg) {
+        return msg + "*******************"
+    })
+
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: "哪里十几分蓝思科技发；算了开房间啊算了发山东良凤江奥森；廊坊奥森了"
+        },
+        methods: {},
+    })
+</script>
+</body>
+</html>
